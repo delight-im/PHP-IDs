@@ -1,0 +1,18 @@
+{
+	"name": "delight-im/ids",
+	"description": "Short, obfuscated and efficient IDs for PHP",
+	"require": {
+		"php": ">=5.6.0",
+		"ext-gmp": "*",
+		"jenssegers/optimus": "^0.2.1"
+	},
+	"type": "library",
+	"keywords": [ "ids", "id", "obfuscation", "obfuscate", "shorten", "encode", "decode", "hash", "hashids", "hashid" ],
+	"homepage": "https://github.com/delight-im/PHP-IDs",
+	"license": "MIT",
+	"autoload": {
+		"psr-4": {
+			"Delight\\Ids\\": "src/"
+		}
+	}
+}
