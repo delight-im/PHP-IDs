@@ -20,23 +20,20 @@ No collisions. Reversible.
 
 ## Installation
 
- * Set up the PHP library
+ * Install via [Composer](https://getcomposer.org/) (recommended)
 
-   * Install via [Composer](https://getcomposer.org/) (recommended)
+   `$ composer require delight-im/ids`
 
-     `$ composer require delight-im/ids`
+   Include the Composer autoloader:
 
-     Include the Composer autoloader:
+   `require __DIR__.'/vendor/autoload.php';`
 
-     `require __DIR__.'/vendor/autoload.php';`
+ * or
 
-   * or
+ * Install manually
 
-   * Install manually
-
-     * Copy the contents of the [`src`](src) directory to a subfolder of your project
-
-     * Include the files in your code via `require` or `require_once`
+   * Copy the contents of the [`src`](src) directory to a subfolder of your project
+   * Include the files in your code via `require` or `require_once`
 
 ## Usage
 
