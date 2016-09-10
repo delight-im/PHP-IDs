@@ -14,5 +14,8 @@
 		"psr-4": {
 			"Delight\\Ids\\": "src/"
 		}
+	},
+	"require-dev": {
+		"phpseclib/phpseclib": "^2.0"
 	}
 }
