@@ -19,6 +19,29 @@ header('Content-type: text/plain; charset=utf-8');
 
 require __DIR__.'/../vendor/autoload.php';
 
+function generateRandomPrime() {
+	$min = new \phpseclib\Math\BigInteger(1e6);
+	$max = new \phpseclib\Math\BigInteger(\Jenssegers\Optimus\Optimus::MAX_INT);
+
+	$prime = (new \phpseclib\Math\BigInteger())->randomPrime($min, $max);
+
+	return (int) ((string) $prime);
+}
+
+function generateModularMultiplicativeInverse($prime) {
+	$a = new \phpseclib\Math\BigInteger($prime);
+	$m = new \phpseclib\Math\BigInteger(\Jenssegers\Optimus\Optimus::MAX_INT + 1);
+
+	$x = $a->modInverse($m);
+
+	return (int) ((string) $x);
+}
+
+function generateRandomInt() {
+	// TODO: use `random_int(...)` in PHP 7.0.0+
+	return mt_rand(1, \Jenssegers\Optimus\Optimus::MAX_INT);
+}
+
 $generator = new \Delight\Ids\Id();
 
 echo '$num | $generator->encode($num) | $generator->decode(...)';
@@ -72,6 +95,25 @@ echo $generator->obfuscate($numSecond);
 echo '); // => ';
 echo $generator->deobfuscate($generator->obfuscate($numSecond));
 echo "\n";
+
+$prime = generateRandomPrime();
+echo "\n";
+echo 'Random prime number:';
+echo "\n";
+echo "\t";
+echo $prime;
+
+echo "\n";
+echo 'Modular multiplicative inverse of random prime:';
+echo "\n";
+echo "\t";
+echo generateModularMultiplicativeInverse($prime);
+
+echo "\n";
+echo 'Random integer:';
+echo "\n";
+echo "\t";
+echo generateRandomInt();
 
 echo "\n";
 echo 'Creating a random alphabet:';
