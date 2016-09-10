@@ -15,7 +15,7 @@ final class Id {
 	const ALPHABET_DEFAULT = '23456789bcdfghjkmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ-_';
 	/** The default prime number for Knuth's multiplicative hashing */
 	const PRIME_DEFAULT = 1125812041;
-	/** The default inverse prime for Knuth's multiplicative hashing */
+	/** The modular multiplicative inverse of the default prime for Knuth's multiplicative hashing */
 	const INVERSE_DEFAULT = 348986105;
 	/** The default random integer for Knuth's multiplicative hashing */
 	const RANDOM_DEFAULT = 998048641;
@@ -32,7 +32,7 @@ final class Id {
 	 *
 	 * @param string|null $alphabet (optional) the alphabet for the base conversion
 	 * @param int|null $prime (optional) the prime number for Knuth's multiplicative hashing
-	 * @param int|null $inverse (optional) the inverse prime for Knuth's multiplicative hashing
+	 * @param int|null $inverse (optional) the modular multiplicative inverse of the prime for Knuth's multiplicative hashing
 	 * @param int|null $random (optional) the random integer for Knuth's multiplicative hashing
 	 */
 	public function __construct($alphabet = null, $prime = null, $inverse = null, $random = null) {
