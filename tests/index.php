@@ -21,18 +21,20 @@ require __DIR__.'/../vendor/autoload.php';
 
 $generator = new \Delight\Ids\Id();
 
-echo '$num => $generator->encode($num) => $generator->decode(...)';
+echo '$num | $generator->encode($num) | $generator->decode(...)';
+echo "\n";
+echo '---------------------------------------------------------';
 echo "\n";
 
 for ($i = 0; $i < 25; $i++) {
 	$encoded = $generator->encode($i);
 	$decoded = $generator->decode($encoded);
 
-	echo sprintf('% 4s', $i);
-	echo ' => ';
-	echo sprintf('% 24s', $encoded);
-	echo ' => ';
-	echo sprintf('% 23s', $decoded);
+	echo sprintf('% 5s', $i);
+	echo ' ';
+	echo sprintf('% 25s', $encoded);
+	echo ' ';
+	echo sprintf('% 25s', $decoded);
 	echo "\n";
 }
 
