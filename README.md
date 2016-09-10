@@ -68,7 +68,7 @@ $generator->deobfuscate(958870139); // => 42
 
  1. Shuffle the characters of the alphabet that is used for the base conversion. Calling `\Delight\Ids\Id::createRandomAlphabet()` may be helpful for that purpose. You might also change the alphabet entirely, but there's usually no need to do that.
  1. Pass your new alphabet to the constructor as the first argument.
- 1. Create [your own prime number, inverse prime and random number](https://github.com/jenssegers/optimus/blob/master/src/Commands/SparkCommand.php) for Knuth's multiplicative hashing.
+ 1. Clone this repository and then execute the file [`tests/index.php`](tests/index.php) to generate your custom prime number, inverse prime and random number for Knuth's multiplicative hashing.
  1. Pass your three new numbers to the constructor as the second, third and fourth argument, respectively.
 
 ## Contributing
